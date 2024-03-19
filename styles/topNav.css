@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Noto+Sans+Mono:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.topNav_section {
+  display: flex;
+  padding: 9px 0px 0px 32px;
+  align-items: center;
+  background-color: #0d1117;
+  gap: 8px;
+  box-shadow: 0px -1px 0px 0px #21262d inset;
+  border-bottom: 1px solid #30363d;
+}
+
+.rectangle {
+  margin-top: 9px;
+  border-radius: 6px;
+}
+
+.code_nav {
+  color: #c9d1d9;
+  text-align: center;
+  font-family: Noto Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.headingCode {
+  display: flex;
+  padding: 0px 7.938px 0px 8px;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.headingCode:hover {
+  background-color: rgba(225, 225, 225, 0.1);
+  border-radius: 6px;
+}
+
+.actions,
+.discussion,
+.insights,
+.issue,
+.projects,
+.pullRequest,
+.security {
+  text-align: center;
+  font-size: 70px;
+  background-color: #0d1117;
+  height: 78vh;
+  color: #c9d1d9;
+}
+
+@media (max-width: 850px) {
+  .topNav_section {
+    flex-wrap: wrap;
+  }
+}

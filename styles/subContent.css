@@ -1,0 +1,53 @@
+.sub-content-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px 6px 0px 0px;
+  color: #7d8590;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.sub-content-main-div {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.sub-contents {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 14px;
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  color: #7d8590;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.folder-name:hover {
+  color: #2f81f7;
+}
+
+.folder-name {
+  margin-left: 16px;
+  color: #e6edf3;
+  text-decoration: none;
+}
+
+.folder-data {
+  display: flex;
+}
+
+@media screen and (max-width: 640px) {
+  .commit-msg {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .folder-name {
+    display: none;
+  }
+}

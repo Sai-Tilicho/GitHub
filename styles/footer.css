@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.footer {
+  background-color: #0d1117;
+  padding-left: 150px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-right: 150px;
+}
+
+.footer_div {
+  display: flex;
+  padding: 41px 0px 8px 0px;
+  align-items: center;
+  gap: 71.281px;
+  flex-shrink: 0;
+  border-top: 1px solid #21262d;
+}
+
+.github_log_div {
+  display: flex;
+  padding-bottom: 0px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.githubOutlined {
+  color: #6e7681;
+  font-size: 24px;
+}
+
+.github_inc {
+  color: #8b949e;
+  font-family: Noto Sans;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1px 0px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 42.753px;
+}
+
+.link {
+  display: flex;
+  text-decoration: none;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #58a6ff;
+  font-family: Noto Sans;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.home_icon {
+  color: #6e7681;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 250px) and (max-width: 500px) {
+  .footer_div {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 20px 0px 0px 0px;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+    border-top: none;
+  }
+
+  .footerLinks {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    flex-wrap: wrap;
+    padding: 1px 0px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .github_log_div {
+    display: flex;
+    padding-bottom: 0px;
+    gap: 8px;
+  }
+
+  .github_inc {
+    color: #8b949e;
+    font-family: Noto Sans;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    white-space: nowrap;
+  }
+
+  .footer {
+    padding-left: 0px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-right: 0px;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 1000px) {
+  .footerLinks {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer_div {
+    display: flex;
+    padding: 40px 0px 0px 0px;
+    align-items: center;
+    gap: 30px;
+    flex-shrink: 0;
+    border-top: 1px solid #21262d;
+  }
+}

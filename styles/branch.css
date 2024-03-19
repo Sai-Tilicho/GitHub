@@ -1,0 +1,744 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Noto+Sans+Mono:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Noto+Sans+Mono:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Menlo&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Noto Sans;
+}
+
+.branch-selection-main-div {
+  position: relative;
+}
+
+.branch-select {
+  display: flex;
+  padding: 6px 17px;
+  justify-content: center;
+  gap: 7.859px;
+  color: #c9d1d9;
+  border-radius: 6px;
+  border: 1px solid rgba(240, 246, 252, 0.1);
+  background: #21262d;
+  font-family: Noto Sans;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.branch-button-clicked {
+  display: flex;
+  padding: 6px 17px;
+  justify-content: center;
+  gap: 7.859px;
+  color: #c9d1d9;
+  border-radius: 6px;
+  border: 1px solid rgba(240, 246, 252, 0.1);
+  background: #21262d;
+  font-family: Noto Sans;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.select-option-icon {
+  padding-top: 2px;
+  width: 15px;
+  height: 10px;
+}
+
+.branch-header {
+  background: #0d1117;
+  padding: 24px 0px 16px 0px;
+  gap: 16px;
+  display: flex;
+}
+
+.select-options-out-div {
+  display: flex;
+}
+
+.sub-header {
+  display: flex;
+  gap: 16px;
+}
+
+.switch-branches {
+  display: flex;
+  padding: 8px 0px;
+  gap: 3.84px;
+}
+
+.branch-length {
+  color: #c9d1d9;
+  font-family: Noto Sans;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 14px;
+}
+
+.branch-name {
+  color: #8b949e;
+  font-family: Noto Sans;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.tag-heading {
+  color: #8b949e;
+  font-family: Noto Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.tag-length {
+  color: #c9d1d9;
+  font-family: Noto Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 14px;
+}
+
+.select-options {
+  position: absolute;
+  width: 300px;
+  height: auto;
+  margin: 8px 0 16px 0;
+  font-size: 12px;
+  border: 1px solid rgba(240, 246, 252, 0.1);
+  background: #21262d;
+  border-radius: 6px;
+  box-shadow: var(--shadow-floating-large, var(--color-shadow-large));
+  animation-name: SelectMenu-modal-animation--sm;
+}
+
+.select-header {
+  padding: 7px 7px 7px 16px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #e6edf3;
+  font-size: 14px;
+  font-weight: var(--base-text-weight-semibold, 600);
+  border-bottom: 1px solid rgba(240, 246, 252, 0.1);
+}
+
+.filter-div {
+  padding: 8px;
+  border-bottom: 1px solid rgba(240, 246, 252, 0.1);
+}
+
+.filter-input {
+  padding: 5px 12px;
+  border: 1px solid rgba(240, 246, 252, 0.1);
+  background: #21262d;
+  border-radius: 6px;
+}
+
+.input-clicked {
+  padding: 5px 12px;
+  border: 5px solid #2f81f7;
+  background: #21262d;
+  border-radius: 6px;
+  color: #e6edf3;
+  font-size: 12px;
+}
+
+.branch-tags-div {
+  padding: 8px 8px 0 8px;
+  display: flex;
+  border-bottom: 1px solid rgba(240, 246, 252, 0.1);
+}
+
+.branches {
+  padding: 4px 16px;
+  font-size: 12px;
+  color: #e6edf3;
+  border: 1px solid rgba(240, 246, 252, 0.1);
+  border-bottom-width: 0;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  cursor: pointer;
+}
+
+.branch-selected {
+  padding: 4px 16px;
+  font-size: 12px;
+  color: #8b949e;
+  border-bottom-width: 0;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  cursor: pointer;
+}
+
+.tags {
+  padding: 4px 16px;
+  font-size: 12px;
+  color: #8b949e;
+  cursor: pointer;
+}
+
+.tag-selected {
+  padding: 4px 16px;
+  font-size: 12px;
+  color: #e6edf3;
+  border: 1px solid rgba(240, 246, 252, 0.1);
+  border-bottom-width: 0;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  cursor: pointer;
+}
+
+.branch-names {
+  padding: 7px 16px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(240, 246, 252, 0.1);
+  color: #e6edf3;
+  cursor: pointer;
+}
+
+.no-data {
+  padding: 7px 0px;
+  font-size: 12px;
+  border-bottom: 1px solid rgba(240, 246, 252, 0.1);
+  color: #e6edf3;
+  text-align: center;
+}
+
+.default {
+  padding: 1px 7px;
+  margin-left: 159px;
+  font-size: 12px;
+  border: 1px solid rgba(240, 246, 252, 0.1);
+  border-radius: 100px;
+  color: #8b949e;
+}
+
+.view-more {
+  padding: 7px 16px;
+  color: #2f81f7;
+  text-align: center;
+  cursor: auto;
+}
+
+.filtered-items {
+  display: flex;
+  flex-direction: column;
+  color: red;
+  border: 2px solid green;
+  gap: 20px;
+}
+
+.filtered-items:hover,
+.filtered-items:hover,
+.branch-names:hover {
+  background-color: rgba(240, 246, 252, 0.1);
+}
+
+.branch-title {
+  padding: 17px;
+  border-radius: 6px 6px 0px 0px;
+  border: 1px solid #30363d;
+  background: #161b22;
+  display: flex;
+  justify-content: space-between;
+}
+
+.shaNoCommit {
+  display: flex;
+  align-items: center;
+}
+
+.profileCommmit {
+  display: flex;
+  align-items: center;
+}
+
+.profile {
+  border-radius: 12px;
+  margin-right: 10px;
+}
+
+.profile-name {
+  margin-left: 2px;
+  color: #c9d1d9;
+  font-family: Noto Sans;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 21px;
+}
+
+.commit-data {
+  margin-left: 2px;
+  color: #c9d1d9;
+  font-family: Noto Sans;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 21px;
+}
+
+.sha-no {
+  color: #8b949e;
+  font-family: "Menlo", monospace;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.clock {
+  margin-left: 86.31px;
+}
+
+.commits-count {
+  display: flex;
+  color: #c9d1d9;
+  font-family: Noto Sans;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+.commit {
+  display: flex;
+  align-items: center;
+  color: #8b949e;
+  padding-left: 5px;
+}
+
+.contents-component {
+  border-radius: 6px;
+  padding-bottom: 17px;
+}
+
+.main-header {
+  background-color: #0d1117;
+  padding: 0px 100px;
+}
+
+.folder-icon {
+  background-color: #8b949e;
+  width: 16px;
+  height: 16px;
+}
+
+.branch-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #161b22;
+  color: #c9d1d9;
+  display: flex;
+  padding: 9px 0px 8px 16px;
+}
+
+.branch-item:hover {
+  background-color: rgba(240, 246, 252, 0.1);
+}
+
+.branchContents {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid rgba(240, 246, 252, 0.1);
+  border-radius: 0px 0px 6px 6px;
+}
+
+.commit-message {
+  margin-left: 152.25px;
+  color: #8b949e;
+  font-family: Noto Sans;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
+  text-decoration: none;
+  display: flex;
+}
+
+.commit-message:hover {
+  text-decoration: underline;
+  color: #2f81f7;
+  font-family: Noto Sans;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
+  text-decoration: underline;
+}
+
+.content-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #c9d1d9;
+  font-family: Noto Sans;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+.content-name {
+  width: 130.11px;
+  color: #c9d1d9;
+  font-family: Noto Sans;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
+  text-decoration: none;
+}
+
+.content-name:hover {
+  color: #2f81f7;
+  text-decoration: underline;
+}
+
+.responsive-commit-data {
+  display: none;
+}
+
+.commit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.switch-branches-tags {
+  color: #e6edf3;
+  font-size: 12px;
+}
+
+.close-icon {
+  color: #7d8590;
+  font-size: 12px;
+}
+
+.close-icon:hover {
+  color: #e6edf3;
+}
+
+@media screen and (max-width: 930px) and (min-width: 535px) {
+  .branch-title {
+    margin-top: 16px;
+    padding: 17px;
+    border-radius: 6px 6px 0px 0px;
+    border: 1px solid #30363d;
+    background: #161b22;
+    display: flex;
+    gap: 100px;
+  }
+
+  .commit {
+    display: none;
+  }
+
+  .sha-no {
+    display: none;
+  }
+
+  .commit-msg {
+    display: flex;
+    margin: 16px 0px;
+    padding: 16px;
+    font-size: 14px;
+    background-color: #161b22;
+    color: #e6edf3;
+    padding: 17px 0px 17px 17px;
+    border-radius: 6px;
+  }
+
+  .branch-select {
+    display: flex;
+    padding: 6px 17px;
+    justify-content: center;
+    width: fit-content;
+    gap: 7.859px;
+    color: #c9d1d9;
+    border-radius: 6px;
+    border: 1px solid rgba(240, 246, 252, 0.1);
+    background: #21262d;
+    font-family: Noto Sans;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  .content-name {
+    width: 70px;
+    color: #c9d1d9;
+    font-family: Noto Sans;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    text-decoration: none;
+  }
+}
+
+@media screen and (max-width: 535px) {
+  .select-options {
+    position: absolute;
+    position: fixed;
+    width: 95%;
+    height: auto;
+    margin: 8px 0 16px 0;
+    font-size: 12px;
+    border: 1px solid rgba(240, 246, 252, 0.1);
+    background: #21262d;
+    border-radius: 6px;
+    box-shadow: var(--shadow-floating-large, var(--color-shadow-large));
+    animation-name: SelectMenu-modal-animation--sm;
+  }
+
+  .branch-button-clicked {
+    display: none;
+  }
+
+  .select-options-out-div {
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    overflow-y: scroll;
+  }
+
+  .default {
+    position: absolute;
+    right: 5%;
+    padding: 1px 7px;
+    font-size: 12px;
+    border: 1px solid rgba(240, 246, 252, 0.1);
+    border-radius: 100px;
+    color: #8b949e;
+  }
+
+  .branch-tags-div {
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid rgba(240, 246, 252, 0.1);
+  }
+
+  .commit-message {
+    display: none;
+  }
+
+  .content-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .branch-names {
+    padding: 16px;
+    font-size: 12px;
+    display: flex;
+    border-bottom: 1px solid rgba(240, 246, 252, 0.1);
+    color: #e6edf3;
+    overflow-y: scroll;
+    padding: 100px;
+  }
+
+  .filter-div {
+    padding: 16px;
+    border-bottom: 1px solid rgba(240, 246, 252, 0.1);
+  }
+
+  .branch-title {
+    margin-top: 16px;
+    padding: 17px;
+    border-radius: 6px 6px 0px 0px;
+    border: 1px solid #30363d;
+    background: #161b22;
+    display: flex;
+    gap: 50px;
+  }
+
+  .commit {
+    display: none;
+  }
+
+  .sha-no {
+    display: none;
+  }
+
+  .branch-header {
+    margin-top: 33px;
+    padding-top: 24px;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .branch-selected {
+    padding: 4px 16px;
+    font-size: 12px;
+    color: #8b949e;
+    border-bottom-width: 0;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+
+  .commit-data {
+    margin-left: 2px;
+    color: #c9d1d9;
+    font-family: Noto Sans;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 21px;
+  }
+
+  .commit-msg {
+    display: flex;
+    margin: 16px 0px;
+    padding: 16px;
+    font-size: 14px;
+    background-color: #161b22;
+    color: #e6edf3;
+    padding: 17px 0px 17px 17px;
+    border-radius: 6px;
+  }
+
+  .branch-select {
+    display: flex;
+    padding: 6px 17px;
+    justify-content: center;
+    width: fit-content;
+    gap: 7.859px;
+    color: #c9d1d9;
+    border-radius: 6px;
+    border: 1px solid rgba(240, 246, 252, 0.1);
+    background: #21262d;
+    font-family: Noto Sans;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  .select-header {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #e6edf3;
+    font-size: 14px;
+    font-weight: var(--base-text-weight-semibold, 600);
+    border-bottom: 1px solid rgba(240, 246, 252, 0.1);
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .branch-title {
+    margin-top: 16px;
+    padding: 17px;
+    border-radius: 6px 6px 0px 0px;
+    border: 1px solid #30363d;
+    background: #161b22;
+    display: flex;
+    gap: 20px;
+  }
+
+  .commit {
+    display: none;
+  }
+
+  .sha-no {
+    display: none;
+  }
+
+  .branch-header {
+    /* background-color: black; */
+    margin-top: 33px;
+    padding-top: 24px;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .branch-selected {
+    padding: 4px 16px;
+    font-size: 12px;
+    color: #8b949e;
+    border-bottom-width: 0;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+
+  .commit-data {
+    display: none;
+  }
+
+  .responsive-commit-data {
+    margin-left: 2px;
+    color: #c9d1d9;
+    font-family: Noto Sans;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 21px;
+  }
+
+  .content-name {
+    color: #c9d1d9;
+    font-family: Noto Sans;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    text-decoration: none;
+  }
+
+  .commit-message {
+    display: none;
+  }
+
+  .commit-msg {
+    display: flex;
+    margin: 16px 0px;
+    padding: 16px;
+    font-size: 14px;
+    background-color: #161b22;
+    color: #e6edf3;
+    padding: 17px 0px 17px 17px;
+    border-radius: 6px;
+  }
+
+  .branch-select {
+    display: flex;
+    padding: 6px 17px;
+    justify-content: center;
+    /* width: fit-content; */
+    gap: 7.859px;
+    color: #c9d1d9;
+    border-radius: 6px;
+    border: 1px solid rgba(240, 246, 252, 0.1);
+    background: #21262d;
+    font-family: Noto Sans;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+  }
+}
